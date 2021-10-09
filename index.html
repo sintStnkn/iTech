@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 <link href="carousel.css" rel="stylesheet">
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/135/135694.png">
@@ -6,13 +5,19 @@
 <script src="choise.js"></script>
 <script src="calculate.js"></script>
 <script src="receipts.js"></script>
+<script src="save.js"></script>
+<script src="search.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 
- <title>Здоровъ сыть</title>
+<title>Здоровъ сыть</title>
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Здоровъ сыть</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -21,17 +26,17 @@
             <a class="nav-link active" aria-current="page" href="#">Главная</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Рецепт" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Поиск</button>
-        </form>
+        <div class="d-flex">
+          <input id="inputSearch" class="form-control me-2" type="search" placeholder="Рецепт" aria-label="Search">
+          <button onclick="Search()" class="btn btn-outline-success">Поиск</button>
+        </div>
       </div>
     </div>
   </nav>
 </header>
 
 <main>
-  
+
 
 
   <!-- Marketing messaging and featurettes
@@ -39,28 +44,34 @@
   <!-- Wrap the rest of the page in another container to center all the content. -->
   <div class="col-md">
     <h2 align="center" class="featurette-divider">Самые популярные рецепты за последний месяц.</h2>
-    </div>
+  </div>
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/1e5/1e5e957d93b566c369775fcadbc51b2f.jpg" width="140" height="140" background="#777" color="#777" class="rounded-circle">
+        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/1e5/1e5e957d93b566c369775fcadbc51b2f.jpg"
+          width="140" height="140" background="#777" color="#777" class="rounded-circle">
         <h2>Сырный суп-пюре с брокколи и грибами</h2>
-        <p>Супы-пюре — отличный вариант, чтобы разнообразить свое меню зимой. Они горячие, сытные, плотные, подходят для питания всех...</p>
-        <p><a onclick="ToReceipt()" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
+        <p>Супы-пюре — отличный вариант, чтобы разнообразить свое меню зимой. Они горячие, сытные, плотные, подходят для
+          питания всех...</p>
+        <p><a onclick="ToReceipt(0)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
       </div>
       <div class="col-lg-4">
-        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/46e/46ed3b979cdf9178858f500d2b6e1fef.png" width="140" height="140" background="#777" color="#777" class="rounded-circle">
+        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/46e/46ed3b979cdf9178858f500d2b6e1fef.png"
+          width="140" height="140" background="#777" color="#777" class="rounded-circle">
         <h2>Салат с говядиной и брокколи</h2>
-        <p>Сочетание отварной говядины, брокколи и легкого йогурта делают этот салат настоящей находкой для адептов здорового питания...</p>
-        <p><a onclick="ToReceipt()" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
+        <p>Сочетание отварной говядины, брокколи и легкого йогурта делают этот салат настоящей находкой для адептов
+          здорового питания...</p>
+        <p><a onclick="ToReceipt(1)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
       </div>
       <div class="col-lg-4">
-        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/0ee/0ee58613aded3592229f39dec985488f.jpg" width="140" height="140" background="#777" color="#777" class="rounded-circle">
+        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/0ee/0ee58613aded3592229f39dec985488f.jpg"
+          width="140" height="140" background="#777" color="#777" class="rounded-circle">
         <h2>Куриные маффины с брокколи</h2>
-        <p>Курица и творог – лучшие источники белка, а их жирность совсем невысока. Брокколи и отруби в составе маффинов обеспечат клетчаткой, снижая калорийность...</p>
-        <p><a onclick="ToReceipt()" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
+        <p>Курица и творог – лучшие источники белка, а их жирность совсем невысока. Брокколи и отруби в составе маффинов
+          обеспечат клетчаткой, снижая калорийность...</p>
+        <p><a onclick="ToReceipt(2)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
       </div>
     </div>
 
@@ -68,36 +79,38 @@
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
-    <div class="row featurette">
+    <div id="" class="row featurette">
       <div class="col-md-7">
-        <h1 class="featurette-divider">Первый шаг на пути к здоровому питанию. <span class="text-muted">Это подсчёт дневной нормы ваших каллорий.</span><p class="lead">Вбейте данные в поля и узнайте вашу дневную норму!</p></h1>
-        
+        <h1 class="featurette-divider">Первый шаг на пути к здоровому питанию. <span class="text-muted">Это подсчёт
+            дневной нормы ваших каллорий.</span>
+          <p class="lead">Вбейте данные в поля и узнайте вашу дневную норму!</p>
+        </h1>
+
       </div>
       <div class="col-md-5 featurette-divider">
-          <div class="form-group row">
-            <label for="inputAge" class="col-sm-2 col-form-label">Возраст</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="inputAge" placeholder="Возраст" type="number" name="AgeN"
-              min="3" max="110">
-            </div>
+        <div class="form-group row">
+          <label for="inputAge" class="col-sm-2 col-form-label">Возраст</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputAge" placeholder="Возраст" type="number" name="AgeN" min="3" max="110">
           </div>
-          <div class="form-group row">
-            <label for="inputWeight" class="col-sm-2 col-form-label">Вес</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="inputWeight" placeholder="Вес" type="number" name="WeightN"
-              min="30" max="250">
-            </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputWeight" class="col-sm-2 col-form-label">Вес</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputWeight" placeholder="Вес" type="number" name="WeightN" min="30"
+              max="250">
           </div>
-          <div class="form-group row">
-            <label for="inputHeight" class="col-sm-2 col-form-label">Рост</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="inputHeight" placeholder="Рост" type="number" name="HeightN"
-              min="50" max="300">
-            </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputHeight" class="col-sm-2 col-form-label">Рост</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputHeight" placeholder="Рост" type="number" name="HeightN" min="50"
+              max="300">
           </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">Активность</label>
-            <div class="col-sm-10">
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">Активность</label>
+          <div class="col-sm-10">
             <select class="custom-select mr-sm-2" id="ativity">
               <option selected>Выбор...</option>
               <option value="1">Основной обмен</option>
@@ -108,100 +121,113 @@
               <option value="1.8">Интенсивно каждый день</option>
             </select>
           </div>
-          </div>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Пол</legend>
-              <div class="col-sm-10">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="MaleB" value="Male" checked>
-                  <label class="form-check-label" for="gridRadios1">
-                    Мужской
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="FemaleB" value="Female">
-                  <label class="form-check-label" for="gridRadios2">
-                    Женский
-                  </label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="It" disabled>
-                  <label class="form-check-label" for="gridRadios3">
-                    Другой
-                  </label>
-                </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Пол</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="MaleB" value="Male" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Мужской
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="FemaleB" value="Female">
+                <label class="form-check-label" for="gridRadios2">
+                  Женский
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="It" disabled>
+                <label class="form-check-label" for="gridRadios3">
+                  Другой
+                </label>
               </div>
             </div>
-          </fieldset>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button onclick="CountCal()" type="submit" class="btn btn-primary">Посчитать</button>
-            </div>
           </div>
-          <br>
-          <div id="result" class="d-none">
-            <p class="lead" id="resultS">Ваша дневная норма киллокаллорий: </p>
-            <p class="lead" id="resultDown">Ваша дневная норма киллокаллорий для умеренного худения: </p>
-            <p class="lead" id="resultFastDown">Ваша дневная норма киллокаллорий для ускоренного худения: </p>
+        </fieldset>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button onclick="CountCal()" type="submit" class="btn btn-primary">Посчитать</button>
           </div>
+        </div>
+        <br>
+        <div id="result" class="d-none">
+          <p class="lead" id="resultS">Ваша дневная норма киллокаллорий: </p>
+          <p class="lead" id="resultDown">Ваша дневная норма киллокаллорий для умеренного худения: </p>
+          <p class="lead" id="resultFastDown">Ваша дневная норма киллокаллорий для ускоренного худения: </p>
+        </div>
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr id="ChoiseDishesScroll" class="featurette-divider">
     <div class="col-md">
       <h2 align="center" class="featurette-divider">Выбор блюда.</h2>
-      </div>
-      <div id="ChoiseDishes" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="https://www.infox.ru/photo/0c7/2e5/0c72e5fa486d282725d440556ff542c8asdasdasd5a6b13367616a7.70929390-650x433-0c72e5fa486d282725d440556ff542c8.gif" class="bd-placeholder-img card-img-top" height="225"></img>
+    </div>
+    <div id="ChoiseDishes" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img
+            src="https://www.infox.ru/photo/0c7/2e5/0c72e5fa486d282725d440556ff542c8asdasdasd5a6b13367616a7.70929390-650x433-0c72e5fa486d282725d440556ff542c8.gif"
+            class="bd-placeholder-img card-img-top" height="225"></img>
 
-            <div class="card-body">
-              <p class="card-text">Яичные блюда на завтрак — довольно популярное блюдо во многих странах мира. Это объясняется и доступностью, и ценой, и быстротой приготовления.</p>
-              <div class="justify-content-between align-items-center">
-                <button value="eggs" onclick="Choise(this.value)" type="button" class="btn btn-lg btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="https://24.kz/media/k2/items/cache/a9423d4ced704169457ad1a6ddd3fafb_XL.jpg" class="bd-placeholder-img card-img-top" height="225"></img>
-
-            <div class="card-body">
-              <p class="card-text">Каша – идеальный здоровый завтрак.Позавтракав кашей, вы не захотите перекусывать до обеда.</p>
-              <div class="justify-content-between align-items-center">
-                <button value="kasha" onclick="Choise(this.value)" type="button" class="btn btn-lg btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="https://gotovim-doma.ru/images/recipe/8/de/8decb6dab54a707a89bd319a7f45aaeb_l.jpg" class="bd-placeholder-img card-img-top" height="225"></img>
-
-            <div class="card-body">
-              <p class="card-text">Кисломолочные продукты на завтрак, всего лишь сто лет назад кисломолочные продукты относились к разряду невероятно дорогих и ценных лекарств.</p>
-              <div class="justify-content-between align-items-center">
-                <button value="cheese" onclick="Choise(this.value)" type="button" class="btn btn-lg btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="https://chto-takoe-lyubov.net/wp-content/uploads/2020/06/romantika-131.jpg" class="bd-placeholder-img card-img-top" height="225"></img>
-
-            <div class="card-body">
-              <p class="card-text">Фрукты на завтрак хороши в сочетаниях. Именно разные ингредиенты подарят чувство сытости, не лишая утренней легкости.</p>
-              <div class="justify-content-between align-items-center">
-                <button value="fruits" onclick="Choise(this.value)"  align="center" type="button" class="btn btn-lg btn-outline-secondary">Подробнее</button>
-              </div>
+          <div class="card-body">
+            <p class="card-text">Яичные блюда на завтрак — довольно популярное блюдо во многих странах мира. Это
+              объясняется и доступностью, и ценой, и быстротой приготовления.</p>
+            <div class="justify-content-between align-items-center">
+              <button value="eggs" onclick="Choise(this.value)" type="button"
+                class="btn btn-lg btn-outline-secondary">Подробнее</button>
             </div>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://24.kz/media/k2/items/cache/a9423d4ced704169457ad1a6ddd3fafb_XL.jpg"
+            class="bd-placeholder-img card-img-top" height="225"></img>
+
+          <div class="card-body">
+            <p class="card-text">Каша – идеальный здоровый завтрак.Позавтракав кашей, вы не захотите перекусывать до
+              обеда.</p>
+            <div class="justify-content-between align-items-center">
+              <button value="kasha" onclick="Choise(this.value)" type="button"
+                class="btn btn-lg btn-outline-secondary">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://gotovim-doma.ru/images/recipe/8/de/8decb6dab54a707a89bd319a7f45aaeb_l.jpg"
+            class="bd-placeholder-img card-img-top" height="225"></img>
+
+          <div class="card-body">
+            <p class="card-text">Кисломолочные продукты на завтрак, всего лишь сто лет назад кисломолочные продукты
+              относились к разряду невероятно дорогих и ценных лекарств.</p>
+            <div class="justify-content-between align-items-center">
+              <button value="cheese" onclick="Choise(this.value)" type="button"
+                class="btn btn-lg btn-outline-secondary">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://chto-takoe-lyubov.net/wp-content/uploads/2020/06/romantika-131.jpg"
+            class="bd-placeholder-img card-img-top" height="225"></img>
+
+          <div class="card-body">
+            <p class="card-text">Фрукты на завтрак хороши в сочетаниях. Именно разные ингредиенты подарят чувство
+              сытости, не лишая утренней легкости.</p>
+            <div class="justify-content-between align-items-center">
+              <button value="fruits" onclick="Choise(this.value)" align="center" type="button"
+                class="btn btn-lg btn-outline-secondary">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="Receipt" class="row featurette d-none">
       <hr class="featurette-divider">
@@ -209,25 +235,44 @@
         <h1 id="NameReceipt">Сырный суп-пюре с брокколи и грибами</h1>
         <p id="DescribeReceipt">Описание</p>
         <p id="TimeReceipt">Время приготовления: 40 мин</p>
-          <p id="CcalReceipt">Киллокаллории: 79ккал/100 г</p>
-            <p id="WeightReceipt">Вес блюда: 600 г.</p>
-          <div class="ingredientsBox-wrap">
-              <div class="ingredientsBox-title">
-                  <h3>Ингредиенты</h3>   
-              </div>
-              <ul id="Ingridient" class="list-group list-group-flush"></ul>
-              <br>
+        <p id="CcalReceipt">Киллокаллории: 79ккал/100 г</p>
+        <p id="WeightReceipt">Вес блюда: 600 г.</p>
+        <div class="ingredientsBox-wrap">
+          <div class="ingredientsBox-title">
+            <h3>Ингредиенты</h3>
           </div>
+          <ul id="Ingridient" class="list-group list-group-flush"></ul>
+          <br>
+        </div>
       </div>
       <div class="col-md-5">
-        <img src="https://рецепты.здоровое-питание.рф/upload/iblock/1e5/1e5e957d93b566c369775fcadbc51b2f.jpg" width="500" height="500" background="#eee" color="#aaa" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" >
+        <img id="ImgRec"
+          src="https://рецепты.здоровое-питание.рф/upload/iblock/1e5/1e5e957d93b566c369775fcadbc51b2f.jpg" width="500"
+          height="500" background="#eee" color="#aaa" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto">
       </div>
       <div class="card mb-3">
         <div id="AllSteps" class="row no-gutters align-items-center">
         </div>
       </div>
     </div>
-  
+    <div id="pdfBut" class="d-none">
+      <div class="form-group row-sm-4">
+
+        <button onclick="SavePdf()" type="button" class="btn btn-lg btn-outline-secondary">Скачать Pdf рецепта</button>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label for="inputAge" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-4">
+          <input class="form-control" id="inputEmail" placeholder="stankin@stankin.ru" type="email">
+        </div>
+        <div class="col-sm-4">
+          <button onclick="SavePdf()" type="button" class="btn btn-lg btn-outline-secondary">Послать Pdf рецепта</button>
+        </div>
+      </div>
+    </div>
+
+
 
     <hr class="featurette-divider">
 
