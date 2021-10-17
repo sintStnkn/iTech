@@ -10,42 +10,40 @@ function Choise(type) {
             AddOneChoise("Омлет", "https://static.1000.menu/img/content-v2/90/36/45938/omlet-iz-yaic-i-moloka-prostoi-na-skovorode_1622035051_0_max.jpg", "omlete");
             break;
         case "kasha":
-            AddOneChoise("Каша на воде", "http://www.vkussovet.ru/content/media/pic/large/1000000/16000/15488-1c9ecb9e5b01e3d8.jpg", "waterkasha");
             AddOneChoise("Каша на молоке", "https://www.patee.ru/r/x6/17/c9/52/960m.jpg", "milkkasha");
             break;
-        case "fruits":
+        /*case "fruits":
             AddOneChoise("Запечёный фруктовый завтрак", "https://www.maggi.ru/data/images/recept/img640x500/recept_6720_vicv.jpg", "fruitzapek");
-            AddOneChoise("Сырой фруктовый завтрак", "https://media.istockphoto.com/photos/delicious-and-healthy-breakfast-with-fruits-berries-cereal-picture-id479774516", "fruitsiroi");
+            AddOneChoise("Сырой фруктовый завтрак", "https://media.istockphoto.com/photos/delicious-and-healthy-breakfast-with-fruits-berries-cereal-picture-id479774516", "fruitsiroi");*/
             break;
         case "cheese":
             AddOneChoise("Запеканка", "https://static.1000.menu/img/content/35128/tvorojnaya-zapekanka-kak-v-detstve_1558702907_1_max.jpg", "zapek");
             AddOneChoise("Сырники", "https://img-global.cpcdn.com/recipes/09d289bc87a7d946/1200x630cq70/photo.jpg", "cheeznik");
             AddOneChoise("Вареники", "https://www.photorecept.ru/wp-content/uploads/2019/07/9-12-1300x864.jpg", "varenik");
-            AddOneChoise("Йогурт", "https://gotovite.ru/wp-content/uploads/2015/09/grecheskiy_yogurt.png", "yoga");
+            //AddOneChoise("Йогурт", "https://gotovite.ru/wp-content/uploads/2015/09/grecheskiy_yogurt.png", "yoga");
             break;
         case "friedeggs":
-            AddOneChoise("Яичница со специями", "https://image.freepik.com/free-photo/fried-eggs-with-spices-on-whole-background-close-up_185193-13650.jpg", "friedeggsSpy");
+            //AddOneChoise("Яичница со специями", "https://image.freepik.com/free-photo/fried-eggs-with-spices-on-whole-background-close-up_185193-13650.jpg", "friedeggsSpy");
             AddOneChoise("Яичница с овощами", "https://kopilka-kulinara.ru/upload/information_system_56/2/7/3/item_2732/item_2732.jpg", "friedeggsVeg");
-            AddOneChoise("Яичница с мясом", "https://kulinaria1955.ru/uploads/posts/2020-12/1608211510_1655.jpg", "friedeggsMet");
+            //AddOneChoise("Яичница с мясом", "https://kulinaria1955.ru/uploads/posts/2020-12/1608211510_1655.jpg", "friedeggsMet");
             break;
         case "omlete":
             AddOneChoise("Омлет со специями", "https://milkalliance.com.ua/blog/media/k2/items/cache/dc9e231f652301f80ea8e901bd9ec18a_M.jpg", "omleteSpy");
             AddOneChoise("Омлет с овощами", "https://www.patee.ru/r/x6/16/7d/20/960m.jpg", "omleteVeg");
-            AddOneChoise("Омлет с мясом", "https://calorizator.ru/sites/default/files/imagecache/recipes_full/recipe/31483.jpg", "omleteMet");
+            //AddOneChoise("Омлет с мясом", "https://calorizator.ru/sites/default/files/imagecache/recipes_full/recipe/31483.jpg", "omleteMet");
             break;
-        case "waterkasha":
+        /*case "waterkasha":
             AddOneChoise("Гречневая каша на воде", "https://www.gastronom.ru/binfiles/images/20150212/b7f594cb.jpg", "waterkashaGr");
             AddOneChoise("Овсяная каша на воде", "http://www.vkussovet.ru/content/media/pic/large/1000000/16000/15488-1c9ecb9e5b01e3d8.jpg", "waterkashaOv");
             AddOneChoise("Рисовая каша на воде", "https://static.1000.menu/img/content/26769/klassicheskaya-risovaya-kasha_1524725368_9_max.jpg", "waterkashaRis");
             AddOneChoise("Пшенная каша на воде", "https://img.povar.ru/uploads/11/18/4f/3d/pshennaya_kasha_na_vode-289556.JPG", "waterkashaPsh");
-            break;
+            break;*/
         case "milkkasha":
             AddOneChoise("Гречневая каша на молоке", "https://s1.eda.ru/StaticContent/Photos/140124100744/150902214209/p_O.jpg", "milkkashaGr");
             AddOneChoise("Овсяная каша на молоке", "https://hozyajkadoma.ru/wp-content/uploads/2020/12/ovsyanaya-kasha-s-maslom.jpg", "milkkashaOv");
             AddOneChoise("Рисовая каша на молоке", "https://km-doma.ru/assets/gallery_thumbnails/8c/8ce956ac1619dee3f35f7d4a0b8e23f1.jpg", "milkkashaRis");
-            AddOneChoise("Пшенная каша на молоке", "https://img-global.cpcdn.com/recipes/0ffc44c17231a66d939ffbc04403ed019c4601c328d1e60058feb113b58f4690/1200x630cq70/photo.jpg", "milkkashaPsh");
             break;
-        case "fruitzapek":
+        /*case "fruitzapek":
             AddOneChoise("Шарлота", "https://static.1000.menu/img/content-v2/70/c1/16602/sharlotka-tvorojnaya-s-yablokami-v-duxovke_1588923840_11_max.jpg", "sharlot");
             AddOneChoise("запечёные яблоки", "https://volshebnaya-eda.ru/wp-content/uploads/2013/11/pecheny-yabloki-810x540.jpg", "applezapek");
             break;
@@ -53,7 +51,7 @@ function Choise(type) {
             AddOneChoise("Банан", "https://icdn.lenta.ru/images/2019/12/06/10/20191206104306174/pwa_vertical_768_c1a9caf868077c23bbbe5b4175f14360.jpg", "banana");
             AddOneChoise("Яблоко", "https://kot.sh/sites/default/files/styles/large/public/articles-image/apple_main.jpg?itok=kaJ1H3Mw", "apple");
             AddOneChoise("Салат с авокадо", "https://cdn.lifehacker.ru/wp-content/uploads/2018/11/shutterstock_507078310_1576510459-e1576510491720-630x315.jpg", "saladAv");
-            break;
+            break;*/
         default:
             isGiveRec = true;
             break;

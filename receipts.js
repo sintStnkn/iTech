@@ -1,19 +1,3 @@
-/* не распределенные
-		case "omleteMet":ToReceipt(5);
-        case "friedeggsSpy":ToReceipt(6);
-        case "friedeggsMet":ToReceipt(8);
-        case "milkkashaPsh":ToReceipt(12);
-        case "waterkashaGr":ToReceipt(13);
-        case "waterkashaOv":ToReceipt(14);
-        case "waterkashaRis":ToReceipt(15);
-        case "waterkashaPsh":ToReceipt(16);
-        case "yoga":ToReceipt(20);
-        case "sharlot":ToReceipt(21);
-        case "applezapek":ToReceipt(22);
-        case "banana":ToReceipt(23);
-        case "apple":ToReceipt(24);
-        case "saladAv":ToReceipt(25);*/
-
 function ToReceipt(type) {
   document.getElementById("Receipt").classList.remove('d-none');
   document.getElementById("pdfBut").classList.remove('d-none');
