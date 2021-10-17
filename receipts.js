@@ -82,8 +82,9 @@ function ToReceipt(type) {
       break;
 
   }
-  var rec = document.getElementById("Receipt");
+  var rec = document.getElementById("NameReceipt");
   rec.scrollIntoView(true);
+  window.scrollBy(0, -100);
 }
 function AddReceipt(imgRec, name, describe, time, weight, ccal, ingridients, stepS, stepI) {
   document.getElementById("ImgRec").setAttribute("src", imgRec);

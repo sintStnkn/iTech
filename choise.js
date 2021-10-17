@@ -137,7 +137,9 @@ function Choise(type) {
         AddOneChoise("Каша – идеальный здоровый завтрак.Позавтракав кашей, вы не захотите перекусывать до обеда.", "https://24.kz/media/k2/items/cache/a9423d4ced704169457ad1a6ddd3fafb_XL.jpg", "kasha");
         AddOneChoise("Кисломолочные продукты на завтрак, всего лишь сто лет назад кисломолочные продукты относились к разряду невероятно дорогих и ценных лекарств.", "https://gotovim-doma.ru/images/recipe/8/de/8decb6dab54a707a89bd319a7f45aaeb_l.jpg", "cheese");
         AddOneChoise("Фрукты на завтрак хороши в сочетаниях. Именно разные ингредиенты подарят чувство сытости, не лишая утренней легкости.", "https://chto-takoe-lyubov.net/wp-content/uploads/2020/06/romantika-131.jpg", "fruits");
-    }
+    	//var choice=document.getElementById("kostyl");
+		//choice.scrollIntoView(true);
+	}
     else{
         var chois=document.getElementById("ChoiseDishesScroll");
         chois.scrollIntoView(true);
