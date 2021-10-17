@@ -1,6 +1,5 @@
-
-
 function Choise(type) {
+	var backButton = document.getElementById("moveBack");
     var alldishes = document.getElementById("ChoiseDishes");
     alldishes.innerHTML = "";
     var isGiveRec = false;
@@ -104,8 +103,6 @@ function Choise(type) {
             ToReceipt(16);
             break;
 
-
-
         case "zapek":
             ToReceipt(17);
             break;
@@ -119,14 +116,12 @@ function Choise(type) {
             ToReceipt(20);
             break;
 
-
         case "sharlot":
             ToReceipt(21);
             break;
         case "applezapek":
             ToReceipt(22);
             break;
-
 
         case "banana":
             ToReceipt(23);
@@ -137,12 +132,9 @@ function Choise(type) {
         case "saladAv":
             ToReceipt(25);
             break;
-
-
     }
-
     if (isGiveRec) {
-
+		backButton.style.marginLeft = 400000;
         AddOneChoise("Яичные блюда на завтрак — довольно популярное блюдо во многих странах мира. Это объясняется и доступностью, и ценой, и быстротой приготовления.", "https://www.infox.ru/photo/0c7/2e5/0c72e5fa486d282725d440556ff542c8asdasdasd5a6b13367616a7.70929390-650x433-0c72e5fa486d282725d440556ff542c8.gif", "eggs");
         AddOneChoise("Каша – идеальный здоровый завтрак.Позавтракав кашей, вы не захотите перекусывать до обеда.", "https://24.kz/media/k2/items/cache/a9423d4ced704169457ad1a6ddd3fafb_XL.jpg", "kasha");
         AddOneChoise("Кисломолочные продукты на завтрак, всего лишь сто лет назад кисломолочные продукты относились к разряду невероятно дорогих и ценных лекарств.", "https://gotovim-doma.ru/images/recipe/8/de/8decb6dab54a707a89bd319a7f45aaeb_l.jpg", "cheese");
@@ -151,10 +143,9 @@ function Choise(type) {
     else{
         var chois=document.getElementById("ChoiseDishesScroll");
         chois.scrollIntoView(true);
+		backButton.style.marginLeft = 0;
     }
-
 }
-
 
 function AddOneChoise(text, src, value) {
     var alldishes = document.getElementById("ChoiseDishes");

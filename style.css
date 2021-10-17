@@ -82,7 +82,8 @@ body {
 	line-height: var(--bs-body-line-height);
 	color: var(--bs-body-color);
 	text-align: var(--bs-body-text-align);
-	background-color: var(--bs-body-bg);
+	/* background-color: var(--bs-body-bg); */
+	background-color: transparent;;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent
 }
@@ -99,8 +100,19 @@ hr:not([size]) {
 	height: 1px
 }
 
+/* наше */
+@media (max-width: 992px) {
+	.my-card {
+	  display: none;
+	}
+  }
 .main-logo {
     height: 100px;
+}
+
+.my-card{
+	height: 15%;
+	width: auto;
 }
 .jumbotron {
     display: flex;
@@ -664,7 +676,7 @@ progress {
 
 .img-thumbnail {
 	padding: .25rem;
-	background-color: #fff;
+	background-color: transparent;
 	border: 1px solid #dee2e6;
 	border-radius: .25rem;
 	max-width: 100%;
@@ -4819,7 +4831,7 @@ fieldset:disabled .btn {
 	flex-direction: column;
 	min-width: 0;
 	word-wrap: break-word;
-	background-color: #fff;
+	background-color: transparent;
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, .125);
 	border-radius: .25rem

@@ -37,14 +37,29 @@
 <section class="jumbotron mainstyle" data-section-name="Zdorov">
   <div class="shadowed-window">
       <div class="container">
-
-          <div class="row justify-content-center  ">
+          <div class="row justify-content-center">
               <!-- ы<img src=".." class="main-logo"> -->
               <div class="text-center col-sm-10 p-4" id="menu">
-                  <h1 class="display-3 text-light m-4 mystroke">Здоровъ сыть - сайт питания, для здоровой и вкусной жизни</h1>
-                  <h2 class="text-light m-4 mystroke">Узнайте своё количество килокалорий для здоровой жизни</h2>
-                  <a class="btn btn-primary pl-4 pr-4" href="#forma" role="button">Перейти к заполнению формы</a>
-              </div>
+                  <h1 class="display-3 text-light m-4 mystroke">Здоровъ сыть - сайт здорового питания</h1>
+                  <h2 class="text-light m-4 mystroke d-lg-none">Узнайте своё количество килокалорий для здоровой жизни</h2>
+                  <a class="btn btn-primary pl-4 pr-4 d-lg-none" href="#forma" role="button">Перейти к заполнению формы</a>
+                  <!-- В допилить сылки -->
+              <div class="row ">
+                <div class="col-sm-4 mb-4 d-flex d-none d-lg-block">
+                  <div class="card border-0 card-height my-card">
+                    <a href="#popular"><img  src="pics/card1.png" alt="Card image" style="width:100%"></a>
+                  </div>
+                </div>
+                <div class="col-sm-4 mb-4 d-flex d-none d-lg-block">
+                  <div class="card border-0 card-height my-card">
+                    <a href="#select_dish"><img  src="pics/card1.png" alt="Card image" style="width:100%"></a>
+                  </div>
+                </div>
+                <div class="col-sm-4 mb-4 d-flex d-none d-lg-block">
+                  <div class="card border-0 card-height my-card">
+                    <a href="#forma"><img  src="pics/card1.png" alt="Card image" style="width:100%"></a>
+                  </div>
+                </div>
 
           </div>
       </div>
@@ -55,10 +70,10 @@
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
-  <div class="col-md">
-    <h2 align="center" class="featurette-divider">Самые популярные рецепты за последний месяц.</h2>
+  <div id="popular" class="col-md">
+    <h2  align="center" class="featurette-divider">Самые популярные рецепты за последний месяц.</h2>
   </div>
-  <div class="container marketing">
+  <div  class="container marketing">
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
@@ -78,9 +93,9 @@
             <div class="card-footer text-center border-0 bg-transparent">
               <p><a onclick="ToReceipt(0)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
             </div>
-
           </div>
         </div>
+
         <div class="col-sm-4 mb-4 d-flex">
           <div class="card border-0 card-height">
             <div class="text-center">
@@ -95,10 +110,10 @@
             </div>
             <div class="card-footer text-center border-0 bg-transparent">
               <p><a onclick="ToReceipt(1)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
-
             </div>
           </div>
         </div>
+
         <div class="col-sm-4 mb-4 d-flex">
           <div class="card border-0 card-height">
             <div class="text-center">
@@ -114,7 +129,6 @@
             <div class="card-footer text-center border-0 bg-transparent">
               <p><a onclick="ToReceipt(2)" class="btn btn-secondary" href="#Receipt">Подробнее &raquo;</a></p>
             </div>
-
           </div>
         </div>
     
@@ -212,8 +226,12 @@
 
     <hr id="ChoiseDishesScroll" class="featurette-divider">
     <div class="col-md">
-      <h2 align="center" class="featurette-divider">Выбор блюда.</h2>
+      <h2 id="select_dish" align="center" class="featurette-divider">Выбор блюда</h2>
     </div>
+	<div class="backButton" align="center">
+	  <button id="moveBack" onclick="Choise()" type="button"
+               class="btn btn-sm btn-outline-secondary" style="margin-top: -60; margin-bottom: 30; margin-left: 40000;">Назад</button>
+	</div>
     <div id="ChoiseDishes" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
       <div class="col">
         <div class="card shadow-sm">
@@ -225,7 +243,7 @@
             <p class="card-text">Яичные блюда на завтрак — довольно популярное блюдо во многих странах мира. Это
               объясняется и доступностью, и ценой, и быстротой приготовления.</p>
             <div class="justify-content-between align-items-center">
-              <button value="eggs" onclick="Choise(this.value)" type="button"
+              <button id="1" value="eggs" onclick="Choise(this.value)" type="button"
                 class="btn btn-lg btn-outline-secondary">Подробнее</button>
             </div>
           </div>
@@ -240,7 +258,7 @@
             <p class="card-text">Каша – идеальный здоровый завтрак.Позавтракав кашей, вы не захотите перекусывать до
               обеда.</p>
             <div class="justify-content-between align-items-center">
-              <button value="kasha" onclick="Choise(this.value)" type="button"
+              <button id="2" value="kasha" onclick="Choise(this.value)" type="button"
                 class="btn btn-lg btn-outline-secondary">Подробнее</button>
             </div>
           </div>
@@ -255,7 +273,7 @@
             <p class="card-text">Кисломолочные продукты на завтрак, всего лишь сто лет назад кисломолочные продукты
               относились к разряду невероятно дорогих и ценных лекарств.</p>
             <div class="justify-content-between align-items-center">
-              <button value="cheese" onclick="Choise(this.value)" type="button"
+              <button id="3" value="cheese" onclick="Choise(this.value)" type="button"
                 class="btn btn-lg btn-outline-secondary">Подробнее</button>
             </div>
           </div>
@@ -270,7 +288,7 @@
             <p class="card-text">Фрукты на завтрак хороши в сочетаниях. Именно разные ингредиенты подарят чувство
               сытости, не лишая утренней легкости.</p>
             <div class="justify-content-between align-items-center">
-              <button value="fruits" onclick="Choise(this.value)" align="center" type="button"
+              <button id="4" value="fruits" onclick="Choise(this.value)" align="center" type="button"
                 class="btn btn-lg btn-outline-secondary">Подробнее</button>
             </div>
           </div>
@@ -306,7 +324,6 @@
     </div>
     <div id="pdfBut" class="d-none">
       <div class="form-group row-sm-4">
-
         <button onclick="SavePdf()" type="button" class="btn btn-lg btn-outline-secondary">Скачать Pdf
           рецепта</button>
       </div>
