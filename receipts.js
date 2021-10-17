@@ -389,7 +389,8 @@ function Yaichnica() {
     ["https://luckclub.ru/images/luckclub/2018/08/15194049025a9047669f-12.jpg",
       "https://menunedeli.ru/wp-content/uploads/2020/01/Menemen-s-kolbasoy-5.jpg",
       "https://newleafeats.files.wordpress.com/2010/09/img_3850b.jpg",
-	  "https://i.ytimg.com/vi/eBlwiq83sz0/maxresdefault.jpg"]
+	  "https://i.ytimg.com/vi/eBlwiq83sz0/maxresdefault.jpg",
+	  "pics/ph.png"]
   );
 }
 
@@ -413,6 +414,7 @@ function Omlet() {
       "https://na-dache.pro/uploads/posts/2021-05/1620949993_62-p-shpinat-foto-71.jpg",
 	  "https://thumbs.dreamstime.com/b/%D0%B6%D0%B0%D1%80%D0%B8%D1%82%D1%8C-%D1%82%D0%B0%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9-%D0%B7%D0%B0%D0%BC%D0%B5%D1%80-%D0%B8-%D1%88%D0%BF%D0%B8%D0%BD%D0%B0%D1%82-%D0%BD%D0%B0-%D0%B6%D0%B5-%D0%B5%D0%B7%D0%BD%D0%BE%D0%BC-skillet-95535072.jpg",
 	  "https://foodytv.com/wp-content/uploads/2017/12/limitless-frittatas-e1512156627648.jpg",
-	  "https://i.pinimg.com/originals/8a/39/7c/8a397c9261f2d98c43d2b48b31d4bb5c.png"]
+	  "https://i.pinimg.com/originals/8a/39/7c/8a397c9261f2d98c43d2b48b31d4bb5c.png",
+	  "pics/ph.png"]
   );
 }
